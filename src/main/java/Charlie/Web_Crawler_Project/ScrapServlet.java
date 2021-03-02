@@ -16,7 +16,7 @@ public class ScrapServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-/*        response.setContentType("text/html");
+       // response.setContentType("text/html");
 
         try
         {
@@ -33,7 +33,7 @@ public class ScrapServlet extends HttpServlet {
         catch(IOException e)
         {
             e.printStackTrace();
-        }*/
+        }
 
 
 /*        PrintWriter out = response.getWriter();
@@ -49,6 +49,7 @@ public class ScrapServlet extends HttpServlet {
             //body.select("tr").size()
         }*/
 
+        System.out.println("Test");
     }
 
 

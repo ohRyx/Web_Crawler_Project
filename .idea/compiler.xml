@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Web_Crawler_Project" target="1.8" />
+      <module name="Web_Crawler_Project" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
