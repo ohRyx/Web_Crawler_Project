@@ -5,15 +5,11 @@
     <title>Web Crawler</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-yellow-100">
-<%@include file="header.jsp"%>
-
-
-
-
-
+<body class="bg-gray-500">
+<%@include file="header.jsp" %>
 
 
 <!--<a href="scrap">Hello Servlet</a>!-->
 </body>
 </html>
+

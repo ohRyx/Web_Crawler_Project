@@ -29,26 +29,24 @@ import twitter4j.conf.ConfigurationBuilder;
 public class TweetServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            ConfigurationBuilder cb = new ConfigurationBuilder();
-            cb.setDebugEnabled(true)
-                    .setOAuthConsumerKey("kCz7E2IGV5ye71Ct79bsvq09a")
-                    .setOAuthConsumerSecret("jvHsqAeVIIYIdutfOzy5d8YQTtuxGZl5fdFPEc0lzDOvhmywEJ")
-                    .setOAuthAccessToken("370000643-X1HRE3RRuLE5WbfN9rthGlh7fr9NwlQ5laujtovE")
-                    .setOAuthAccessTokenSecret("KobVEymuTxqgFl6tf5dAfcWTPZCM5JKoHX2SZzeZYHF3f");
-            TwitterFactory tf = new TwitterFactory(cb.build());
-            Twitter twitter = tf.getInstance();
-            try {
-                Query query = new Query("manutd");
-                query.setCount(100);
-                QueryResult result = twitter.search(query);
-                for (Status status : result.getTweets()) {
-                    System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
-                }
-
-            }catch(TwitterException e)
-                {
-                    e.printStackTrace();
-                }
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthConsumerKey("kCz7E2IGV5ye71Ct79bsvq09a")
+                .setOAuthConsumerSecret("jvHsqAeVIIYIdutfOzy5d8YQTtuxGZl5fdFPEc0lzDOvhmywEJ")
+                .setOAuthAccessToken("370000643-X1HRE3RRuLE5WbfN9rthGlh7fr9NwlQ5laujtovE")
+                .setOAuthAccessTokenSecret("KobVEymuTxqgFl6tf5dAfcWTPZCM5JKoHX2SZzeZYHF3f");
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        Twitter twitter = tf.getInstance();
+        try {
+            Query query = new Query("manutd");
+            query.setCount(100);
+            QueryResult result = twitter.search(query);
+            for (Status status : result.getTweets()) {
+                System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+            }
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
         System.out.println("Tweet");
 
     }
