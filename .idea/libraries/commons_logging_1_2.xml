@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="commons-logging-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/httpclient-4.5.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/httpcore-4.4.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/jsoup-1.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-beans-5.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-boot-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-boot-autoconfigure-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-context-5.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-core-5.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-jcl-5.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Desktop/libraryused/spring-web-5.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -46,6 +46,7 @@ public class TweetServlet extends HttpServlet {
                 //System.out.println("@" + user + ":" + status.getText());
                 System.out.println(user);
                 request.setAttribute("user", user);
+                //testing branch
             }
         } catch (TwitterException e) {
             e.printStackTrace();
