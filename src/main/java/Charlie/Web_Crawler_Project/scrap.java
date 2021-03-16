@@ -16,12 +16,12 @@ public class scrap {
 
         Elements body = doc.select("tbody.lister-list");
 
-        for(Element e: body.select("tr"))
-        {
+        for (Element e : body.select("tr")) {
             String title = e.select("td.posterColumn img").attr("alt");
             //System.out.println(title);
             //body.select("tr").size()
         }
+        
 
     }
 

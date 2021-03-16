@@ -7,9 +7,9 @@
 </head>
 <body class="bg-gray-500">
 <%@include file="header.jsp" %>
+<p>Result: ${user}</p>
 
-
-<!--<a href="scrap">Hello Servlet</a>!-->
+<%--<a href="hello-servlet">Hello Servlet</a>--%>
 </body>
 </html>
 

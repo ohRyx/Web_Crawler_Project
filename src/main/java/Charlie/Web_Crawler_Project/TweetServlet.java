@@ -42,12 +42,16 @@ public class TweetServlet extends HttpServlet {
             query.setCount(100);
             QueryResult result = twitter.search(query);
             for (Status status : result.getTweets()) {
-                System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+                String user = status.getUser().getScreenName() + ": " + status.getText();
+                //System.out.println("@" + user + ":" + status.getText());
+                System.out.println(user);
+                request.setAttribute("user", user);
             }
         } catch (TwitterException e) {
             e.printStackTrace();
         }
         System.out.println("Tweet");
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
     }
 

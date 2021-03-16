@@ -66,7 +66,7 @@ public class RedditCrawl {
             articlesTitle = (String) o_data.get("title");
             articlesUrl = (String) o_data.get("url");
             selfText = (String) o_data.get("selftext");
-            
+
 
             JSONObject crawl_obj = new JSONObject();
             crawl_obj.put("Title", articlesTitle);
@@ -107,7 +107,7 @@ public class RedditCrawl {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            tList.add(new Articles(title, url));
+            //tList.add(new Articles(title, url));
         }
 
         for (Articles articles : tList) {
