@@ -4,6 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -29,6 +31,14 @@ import twitter4j.conf.ConfigurationBuilder;
 public class TweetServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<twitterClass> twitterList = new ArrayList<>();
+        String search = request.getParameter("search");
+
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("kCz7E2IGV5ye71Ct79bsvq09a")
@@ -38,25 +48,22 @@ public class TweetServlet extends HttpServlet {
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
         try {
-            Query query = new Query("manutd");
-            query.setCount(100);
+            Query query = new Query(search);
+            query.setCount(20);
             QueryResult result = twitter.search(query);
             for (Status status : result.getTweets()) {
-                String user = status.getUser().getScreenName() + ": " + status.getText();
-                //System.out.println("@" + user + ":" + status.getText());
-                System.out.println(user);
-                request.setAttribute("user", user);
+                String name = status.getUser().getScreenName();
+                String tweet = status.getText();
+
+                System.out.println(name);
+                System.out.println(tweet);
+
+                twitterList.add(new twitterClass(name, tweet));
+                request.setAttribute("twitterlist", twitterList);
             }
         } catch (TwitterException e) {
             e.printStackTrace();
         }
-        System.out.println("Tweet");
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        getServletContext().getRequestDispatcher("/twitter.jsp").forward(request, response);
     }
 }
