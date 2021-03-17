@@ -8,6 +8,15 @@
 <body class="bg-gray-500">
 <%@include file="header.jsp" %>
 
+
+<form action="redditcrawl" method="post">
+    <label for="search">Search</label>
+    <input id="search" type="search" name="searchReddit">
+
+    <button type="submit">Submit</button>
+
+</form>
+
 <c:forEach items="${requestScope.result}" var="tweetlist">
     <p>${tweetlist.title}</p>
     <p>${tweetlist.url}</p>

@@ -86,6 +86,52 @@ public class RedditCrawl {
         }
     }
 
+    public static void crawlPost(String search) throws RestClientException, ParseException {
+        String articlesTitle, articlesUrl, selfText;
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        String authToken = getAuthToken();
+        headers.setBearerAuth(authToken);
+        headers.put("User-Agent",
+                Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
+        HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
+        //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
+        String url = "https://oauth.reddit.com/r/covid/.json?limit=10";
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+
+        JSONObject obj = new JSONObject();
+        JSONArray list = new JSONArray();
+
+        JSONParser parse = new JSONParser();
+        JSONObject data_obj = (JSONObject) parse.parse(response.getBody());
+        JSONObject data = (JSONObject) data_obj.get("data");
+        JSONArray children = (JSONArray) data.get("children");
+        for (Object o : children) {
+            JSONObject o_post = (JSONObject) o;
+            JSONObject o_data = (JSONObject) o_post.get("data");
+            articlesTitle = (String) o_data.get("title");
+            articlesUrl = (String) o_data.get("url");
+            selfText = (String) o_data.get("selftext");
+
+
+            JSONObject crawl_obj = new JSONObject();
+            crawl_obj.put("Title", articlesTitle);
+            crawl_obj.put("Url", articlesUrl);
+            crawl_obj.put("Description", selfText);
+            list.add(crawl_obj);
+            obj.put("Articles", list);
+
+            try {
+                FileWriter file = new FileWriter("Reddit_post.json");
+                file.write(obj.toString());
+                file.flush();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+
 /*    public static void main(String[] args) throws IOException, ParseException {
          String keyword;
         int noOfpost;

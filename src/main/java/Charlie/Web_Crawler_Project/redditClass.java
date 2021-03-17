@@ -17,15 +17,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArticlesClass {
-    String title;
-    String url;
+public class redditClass {
+    private String title;
+    private String url;
+    private String noOfPost;
 
-    public ArticlesClass() {
+    public redditClass() {
 
     }
 
-    public ArticlesClass(String title, String url) {
+    public redditClass(String title, String url) {
         super();
         this.title = title;
         this.url = url;

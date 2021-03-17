@@ -9,7 +9,7 @@
 <%@include file="header.jsp" %>
 
 
-<form action="tweet" method="post">
+<form action="tweet2" method="post">
     <label for="search">Search</label>
     <input id="search" type="search" name="search">
 

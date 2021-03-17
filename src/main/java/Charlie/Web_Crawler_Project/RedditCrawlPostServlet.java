@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "RedditPopularServlet", value = "/redditpopular")
-public class RedditPopularServlet extends HttpServlet {
+@WebServlet(name = "RedditCrawlPostServlet", value = "/redditcrawl")
+public class RedditCrawlPostServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String search = request.getParameter("searchReddit");
         try {
-            RedditCrawl.crawlPopularPost();
+            RedditCrawl.crawlPost(search);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -46,11 +52,6 @@ public class RedditPopularServlet extends HttpServlet {
         System.out.println("Total numbers of posts: " + tList.size());
         request.setAttribute("result", tList);
         getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }
