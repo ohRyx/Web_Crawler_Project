@@ -1,14 +1,14 @@
 package Charlie.Web_Crawler_Project;
 
-public class twitterClass {
+public class TwitterClass {
 
     private String name;
     private String tweet;
 
-    public twitterClass() {
+    public TwitterClass() {
     }
 
-    public twitterClass(String name, String tweet) {
+    public TwitterClass(String name, String tweet) {
         this.name = name;
         this.name = tweet;
     }

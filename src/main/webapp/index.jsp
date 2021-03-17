@@ -11,6 +11,12 @@
 
 
 <%--<a href="hello-servlet">Hello Servlet</a>--%>
+
+<c:forEach items="${requestScope.result}" var="tweetlist">
+    <p>${tweetlist.title}</p>
+    <p>${tweetlist.url}</p>
+</c:forEach>
+
 </body>
 </html>
 

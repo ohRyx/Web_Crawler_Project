@@ -21,7 +21,7 @@
                 <div class="md:flex items-center space-x-1">
                     <a href="#" class="py-5 px-3 text-gray-700 hover:text-blue-500">About Us</a>
                     <a href="twitter.jsp" class="py-5 px-3 text-gray-700 hover:text-blue-500">Twitter</a>
-                    <a href="#" class="py-5 px-3 text-gray-700 hover:text-blue-500">Reddit</a>
+                    <a href="reddit" class="py-5 px-3 text-gray-700 hover:text-blue-500">Reddit</a>
                 </div>
             </div>
         </div>

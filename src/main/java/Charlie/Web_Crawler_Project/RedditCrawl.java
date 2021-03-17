@@ -40,7 +40,7 @@ public class RedditCrawl {
         return String.valueOf(map.get("access_token"));
     }
 
-    public static void crawlPost() throws RestClientException, ParseException {
+    public static void crawlPopularPost() throws RestClientException, ParseException {
         String articlesTitle, articlesUrl, selfText;
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -95,9 +95,9 @@ public class RedditCrawl {
         System.out.print("Number of post: ");
         noOfpost = input.nextInt() - 1;*/
 
-        crawlPost();
+        crawlPopularPost();
 
-        List<Articles> tList = new ArrayList<Articles>();
+        List<ArticlesClass> tList = new ArrayList<ArticlesClass>();
         String title, url;
         JSONParser jsonParser = new JSONParser();
         JSONObject data = (JSONObject) jsonParser.parse(new FileReader("Reddit_post.json"));
@@ -107,10 +107,10 @@ public class RedditCrawl {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            tList.add(new Articles(title, url));
+            tList.add(new ArticlesClass(title, url));
         }
 
-        for (Articles articles : tList) {
+        for (ArticlesClass articles : tList) {
             articles.info();
         }
         System.out.println("Total numbers of posts: " + tList.size());

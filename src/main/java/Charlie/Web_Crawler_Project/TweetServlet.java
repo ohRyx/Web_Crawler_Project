@@ -36,7 +36,7 @@ public class TweetServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<twitterClass> twitterList = new ArrayList<>();
+        List<TwitterClass> twitterList = new ArrayList<>();
         String search = request.getParameter("search");
 
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -58,7 +58,7 @@ public class TweetServlet extends HttpServlet {
                 System.out.println(name);
                 System.out.println(tweet);
 
-                twitterList.add(new twitterClass(name, tweet));
+                twitterList.add(new TwitterClass(name, tweet));
                 request.setAttribute("twitterlist", twitterList);
             }
         } catch (TwitterException e) {
