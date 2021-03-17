@@ -107,7 +107,7 @@ public class RedditCrawl {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            //tList.add(new Articles(title, url));
+            tList.add(new Articles(title, url));
         }
 
         for (Articles articles : tList) {
