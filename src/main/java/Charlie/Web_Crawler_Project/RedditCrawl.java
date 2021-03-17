@@ -86,14 +86,14 @@ public class RedditCrawl {
         }
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
-       /* String keyword;
+/*    public static void main(String[] args) throws IOException, ParseException {
+         String keyword;
         int noOfpost;
         Scanner input = new Scanner(System.in);
         System.out.print("Keyword: ");
         keyword = input.next();
         System.out.print("Number of post: ");
-        noOfpost = input.nextInt() - 1;*/
+        noOfpost = input.nextInt() - 1;
 
         crawlPopularPost();
 
@@ -115,6 +115,6 @@ public class RedditCrawl {
         }
         System.out.println("Total numbers of posts: " + tList.size());
 
-    }
+    }*/
 
 }

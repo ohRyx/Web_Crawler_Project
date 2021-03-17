@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "RedditServlet", value = "/reddit")
-public class RedditServlet extends HttpServlet {
+@WebServlet(name = "RedditPopularServlet", value = "/redditpopular")
+public class RedditPopularServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -45,7 +45,7 @@ public class RedditServlet extends HttpServlet {
         }
         System.out.println("Total numbers of posts: " + tList.size());
         request.setAttribute("result", tList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
 
     }
 
