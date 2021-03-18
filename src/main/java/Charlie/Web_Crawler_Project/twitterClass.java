@@ -4,13 +4,15 @@ public class twitterClass {
 
     private String name;
     private String tweet;
+    private Integer rtcount;
 
     public twitterClass() {
     }
 
-    public twitterClass(String name, String tweet) {
+    public twitterClass(String name, String tweet, int rtcount) {
         this.name = name;
-        this.name = tweet;
+        this.tweet = tweet;
+        this.rtcount = rtcount;
     }
 
     public String getName() {
@@ -29,6 +31,8 @@ public class twitterClass {
         this.tweet = tweet;
     }
 
+    public Integer getRtcount() { return rtcount; }
 
+    public void setRtcount(Integer rtcount) { this.rtcount = rtcount; }
 }
 

@@ -58,7 +58,7 @@ public class TweetServlet extends HttpServlet {
                 System.out.println(name);
                 System.out.println(tweet);
 
-                twitterList.add(new twitterClass(name, tweet));
+                twitterList.add(new twitterClass(name, tweet, 0));
                 request.setAttribute("twitterlist", twitterList);
             }
         } catch (TwitterException e) {

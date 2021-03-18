@@ -62,5 +62,65 @@ public class Tweets {
         return tweets;
     }
 
-    //print tweets
+    //Retrieves the trends of a particular location.
+    public List<String> getLocationTrends(String location) throws TwitterException {
+
+        Integer idTrendLocation = getTrendLocationId(location);
+
+        ArrayList<String> trendsList = new ArrayList<String>();
+
+        try {
+
+            if (idTrendLocation == null) {
+                System.out.println("Trend Location Not Found");
+            }
+
+            //getting trends based on the location ID
+            Trends trends = twitter.getPlaceTrends(idTrendLocation);
+
+            for (int i = 0; i < trends.getTrends().length; i++) {
+                trendsList.add(trends.getTrends()[i].getName());
+                //System.out.println(trends.getTrends()[i].getName());
+            }
+
+            //Catching error
+        } catch (TwitterException te) {
+            te.printStackTrace();
+            System.out.println("Failed to get trends: " + te.getMessage());
+            System.exit(-1);
+        }
+        //Returns list for writing to file
+        return trendsList;
+    }
+
+    private Integer getTrendLocationId(String placeName) {
+        int LocationID = 0;
+        if (placeName == ""){
+            LocationID = 1;
+            return LocationID;
+        }
+        try {
+            ResponseList<Location> locations;
+            locations = twitter.getAvailableTrends();
+
+            for (Location location : locations) {
+                if (location.getName().equalsIgnoreCase(placeName.toLowerCase())) {
+                    LocationID = location.getWoeid();
+                    break;
+                }
+            }
+
+            //Checking if is valid
+            if (LocationID > 0) {
+                return LocationID;
+            }
+            return null;
+
+            //Catching error if location does not exist
+        } catch (TwitterException te) {
+            System.out.println("Failed to get trends: " + te.getMessage());
+            return null;
+        }
+    }
+
 }
