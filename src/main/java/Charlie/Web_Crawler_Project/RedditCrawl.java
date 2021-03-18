@@ -49,8 +49,7 @@ public class RedditCrawl {
         headers.put("User-Agent",
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        String url = "https://oauth.reddit.com/r/popular/.json?geo_filter=SG&limit=10";
+        String url = "https://oauth.reddit.com/r/popular/.json?geo_filter=SG&limit=20";
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
         JSONObject obj = new JSONObject();
@@ -124,7 +123,7 @@ public class RedditCrawl {
             crawl_obj.put("Url", articlesUrl);
             crawl_obj.put("Description", selfText);
             crawl_obj.put("Comments", comments);
-            crawl_obj.put("Upvotes", upVotes*100);
+            crawl_obj.put("Upvotes", upVotes * 100);
             list.add(crawl_obj);
             obj.put("Articles", list);
 

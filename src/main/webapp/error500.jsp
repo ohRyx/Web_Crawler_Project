@@ -11,7 +11,7 @@
     <title>Internal Error</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-500">
+<body class="bg-gray-400">
 <div class="text-light-blue-900 flex h h-screen text-center">
     <div class="m-auto">
         <h1 class="text-9xl">Oh No!!</h1>
