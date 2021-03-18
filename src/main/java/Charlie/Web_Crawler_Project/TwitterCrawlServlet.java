@@ -38,15 +38,14 @@ public class TwitterCrawlServlet extends HttpServlet {
 
         //add tweet data to twitterlist to display on page
         for (Status status : tweetsList) {
-            String name = "@"+ status.getUser().getScreenName();
+            String name = status.getUser().getName();
             String tweet = status.getText();
-            Integer rtcount = status.getRetweetCount();
+            Integer retcount = status.getRetweetCount();
 
-            System.out.println(name);
+            //System.out.println(name);
             System.out.println(tweet);
-            System.out.println(rtcount);
 
-            twitterList.add(new twitterClass(name, tweet, rtcount));
+            twitterList.add(new twitterClass(name, tweet, retcount));
             request.setAttribute("twitterlist", twitterList);
         }
         //create WriteTweets object
@@ -56,7 +55,7 @@ public class TwitterCrawlServlet extends HttpServlet {
         writeTweets.createTxt("tweets.txt");
 
         //get tweets and write to txt file
-        writeTweets.writeTxt(tweetsList,"tweets.txt");
+        writeTweets.writeTxt(tweetsList, "tweets.txt");
 
         getServletContext().getRequestDispatcher("/twitter.jsp").forward(request, response);
     }

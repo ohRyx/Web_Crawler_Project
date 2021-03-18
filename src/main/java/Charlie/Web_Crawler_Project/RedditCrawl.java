@@ -42,6 +42,9 @@ public class RedditCrawl {
 
     public static void crawlPopularPost() throws RestClientException, ParseException {
         String articlesTitle, articlesUrl, selfText;
+        Long comments;
+        Double upVotes;
+
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         String authToken = getAuthToken();
@@ -65,12 +68,16 @@ public class RedditCrawl {
             articlesTitle = (String) o_data.get("title");
             articlesUrl = (String) o_data.get("url");
             selfText = (String) o_data.get("selftext");
+            comments = (Long) o_data.get("num_comments");
+            upVotes = (Double) o_data.get("upvote_ratio");
 
 
             JSONObject crawl_obj = new JSONObject();
             crawl_obj.put("Title", articlesTitle);
             crawl_obj.put("Url", articlesUrl);
             crawl_obj.put("Description", selfText);
+            crawl_obj.put("Comments", comments);
+            crawl_obj.put("Upvotes", upVotes * 100);
             list.add(crawl_obj);
             obj.put("Articles", list);
 

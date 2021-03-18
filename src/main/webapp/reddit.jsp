@@ -17,11 +17,11 @@
 
 </form>
 
-<c:forEach items="${requestScope.result}" var="tweetlist">
-    <p>${tweetlist.title}</p>
-    <p>${tweetlist.url}</p>
-    <p>${tweetlist.comments} comments</p>
-    <p>${tweetlist.upvotes} upvotes</p>
+<c:forEach items="${requestScope.result}" var="redditlist">
+    <p>${redditlist.title}</p>
+    <p>${redditlist.url}</p>
+    <p>${redditlist.comments} comments</p>
+    <p>${redditlist.upvotes} upvotes</p>
 </c:forEach>
 
 </body>

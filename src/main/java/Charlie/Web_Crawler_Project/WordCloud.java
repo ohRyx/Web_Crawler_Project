@@ -17,18 +17,20 @@ import java.util.Collection;
 import java.util.List;
 
 public class WordCloud {
-    public WordCloud(){
+    public WordCloud() {
 
     }
+
     public void test() {
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
         System.out.println("testingfml");
         try {
             final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load("tweets.txt");
-        } catch (IOException e){
-            System.out.println (e.toString());
+        } catch (IOException e) {
+            System.out.println(e.toString());
         }
     }
+
     public void createWordCloud(String tweets) throws IOException {
         //create word cloud
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
@@ -45,7 +47,7 @@ public class WordCloud {
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0xFFFFFF)));
         wordCloud.setFontScalar(new SqrtFontScalar(10, 40));
         wordCloud.build(wordFrequencies);
-        wordCloud.writeToFile("C:\\Users\\Akmal\\Web_Crawler_Project\\src\\main\\webapp\\image\\wordcloud.png");
+        wordCloud.writeToFile("C:\\Users\\Haikal Wahab\\Documents\\SIT\\Tri 2\\OOP\\WebCrawler\\src\\main\\webapp\\image\\wordcloud.png");
         System.out.println("Printed wordcloud successfully");
     }
 

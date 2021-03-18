@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "RedditPopularServlet", value = "")
+@WebServlet(name = "RedditPopularServlet")
 public class RedditPopularServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class RedditPopularServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        List<redditClass> redditList = new ArrayList<redditClass>();
+        List<redditClass> redditlist = new ArrayList<redditClass>();
         String title, url;
         Long comments;
         Double upvotes;
@@ -41,14 +41,19 @@ public class RedditPopularServlet extends HttpServlet {
             url = (String) p_obj.get("Url");
             comments = (Long) p_obj.get("Comments");
             upvotes = (Double) p_obj.get("Upvotes");
-            redditList.add(new redditClass(title, url, comments, upvotes));
+            redditlist.add(new redditClass(title, url, comments, upvotes));
         }
 
+/*        for (redditClass articles : redditlist) {
+            articles.info();
+        }*/
+
         System.out.println("Reddit Popular Crawl Works!");
-        request.setAttribute("redditList", redditList);
+        request.setAttribute("redditList", redditlist);
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
