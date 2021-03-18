@@ -6,11 +6,21 @@
     <title>Web Crawler</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-500">
+<body class="bg-gray-400">
 <%@include file="header.jsp" %>
 
+<div class="absolute inset-y-40 inset-x-16">
+    <p class="text-3xl">Reddit Popular Post </p>
+</div>
 
-<%--<a href="hello-servlet">Hello Servlet</a>--%>
+<div class="container w-2/5 absolute inset-y-48 inset-x-14 py-2">
+    <c:forEach items="${requestScope.redditList}" var="redditList" varStatus="theCount">
+        <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
+            <a class="font-black" href="${redditList.url}" target="_blank">${theCount.count}) ${redditList.title}
+        </div>
+    </c:forEach>
+</div>
+
 
 </body>
 </html>

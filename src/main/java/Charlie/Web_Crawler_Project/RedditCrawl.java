@@ -49,8 +49,7 @@ public class RedditCrawl {
         headers.put("User-Agent",
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        String url = "https://oauth.reddit.com/r/popular/.json?geo_filter=SG&limit=10";
+        String url = "https://oauth.reddit.com/r/popular/.json?geo_filter=SG&limit=20";
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
         JSONObject obj = new JSONObject();
@@ -99,7 +98,7 @@ public class RedditCrawl {
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
         //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        String url = "https://oauth.reddit.com/r/covid/.json?limit=10";
+        String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=10";
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
         JSONObject obj = new JSONObject();
@@ -124,7 +123,7 @@ public class RedditCrawl {
             crawl_obj.put("Url", articlesUrl);
             crawl_obj.put("Description", selfText);
             crawl_obj.put("Comments", comments);
-            crawl_obj.put("Upvotes", upVotes*100);
+            crawl_obj.put("Upvotes", upVotes * 100);
             list.add(crawl_obj);
             obj.put("Articles", list);
 
@@ -138,36 +137,5 @@ public class RedditCrawl {
             }
         }
     }
-
-/*    public static void main(String[] args) throws IOException, ParseException {
-         String keyword;
-        int noOfpost;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Keyword: ");
-        keyword = input.next();
-        System.out.print("Number of post: ");
-        noOfpost = input.nextInt() - 1;
-
-        crawlPopularPost();
-
-        List<ArticlesClass> tList = new ArrayList<ArticlesClass>();
-        String title, url;
-        JSONParser jsonParser = new JSONParser();
-        JSONObject data = (JSONObject) jsonParser.parse(new FileReader("Reddit_post.json"));
-        JSONArray data_arr = (JSONArray) data.get("Articles");
-        for (Object obj : data_arr) {
-            JSONObject p_obj = (JSONObject) obj;
-            System.out.println(p_obj);
-            title = (String) p_obj.get("Title");
-            url = (String) p_obj.get("Url");
-            tList.add(new ArticlesClass(title, url));
-        }
-
-        for (ArticlesClass articles : tList) {
-            articles.info();
-        }
-        System.out.println("Total numbers of posts: " + tList.size());
-
-    }*/
 
 }

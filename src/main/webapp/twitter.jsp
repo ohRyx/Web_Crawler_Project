@@ -5,7 +5,7 @@
     <title>Twitter</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-500">
+<body class="bg-gray-400">
 <%@include file="header.jsp" %>
 
 
@@ -17,9 +17,9 @@
 
 </form>
 
-<c:forEach items="${requestScope.twitterlist}" var="tweetlist">
-    <p>${tweetlist.name}</p>
-    <p>${tweetlist.tweet}</p>
+<c:forEach items="${requestScope.twitterlist}" var="redditList">
+    <p>${redditList.name}</p>
+    <p>${redditList.tweet}</p>
 </c:forEach>
 
 </body>

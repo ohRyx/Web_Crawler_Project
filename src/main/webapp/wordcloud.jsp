@@ -6,7 +6,7 @@
     <title>Web Crawler</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-500">
+<body class="bg-gray-400">
 <%@include file="header.jsp" %>
 
 <div class="">
