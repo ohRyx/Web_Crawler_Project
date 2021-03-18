@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "TwitterCrawlServlet", value = "/tweet2")
+@WebServlet(name = "TwitterCrawlServlet", value = "/tweet")
 public class TwitterCrawlServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class TwitterCrawlServlet extends HttpServlet {
         tweets.tweetManager();
 
         //set query keyword and tweet count
-        String keyword = request.getParameter("search");
+        String keyword = request.getParameter("searchTwitter");
         int numberOfTweets = 10; //add_the_paramater_here
 
         //create tweets list
@@ -38,7 +38,7 @@ public class TwitterCrawlServlet extends HttpServlet {
 
         //add tweet data to twitterlist to display on page
         for (Status status : tweetsList) {
-            String name = status.getUser().getName();
+            String name = "@" + status.getUser().getName();
             String tweet = status.getText();
             Integer retcount = status.getRetweetCount();
 

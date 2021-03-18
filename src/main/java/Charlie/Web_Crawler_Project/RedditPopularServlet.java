@@ -44,13 +44,9 @@ public class RedditPopularServlet extends HttpServlet {
             redditlist.add(new redditClass(title, url, comments, upvotes));
         }
 
-/*        for (redditClass articles : redditlist) {
-            articles.info();
-        }*/
-
         System.out.println("Reddit Popular Crawl Works!");
         request.setAttribute("redditList", redditlist);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/trend").include(request, response);
 
     }
 

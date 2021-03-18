@@ -53,7 +53,7 @@ public class RedditCrawlPostServlet extends HttpServlet {
         /*        for (redditClass articles : redditlist) {
             articles.info();
         }*/
-        request.setAttribute("result", redditlist);
+        request.setAttribute("redditcrawl", redditlist);
         getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
 
     }
