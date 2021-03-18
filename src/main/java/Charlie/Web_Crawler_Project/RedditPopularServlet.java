@@ -24,6 +24,9 @@ public class RedditPopularServlet extends HttpServlet {
         }
         List<redditClass> tList = new ArrayList<redditClass>();
         String title, url;
+        Long comments;
+        Double upvotes;
+
         JSONParser jsonParser = new JSONParser();
         JSONObject data = null;
         try {
@@ -37,8 +40,9 @@ public class RedditPopularServlet extends HttpServlet {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            tList.add(new redditClass(title, url));
-        }
+            comments = (Long)p_obj.get("Comments");
+            upvotes = (Double)p_obj.get("Upvotes");
+            tList.add(new redditClass(title, url, comments, upvotes));        }
 
         for (redditClass articles : tList) {
             articles.info();
