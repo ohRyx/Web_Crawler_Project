@@ -17,9 +17,9 @@
 
 </form>
 
-<c:forEach items="${requestScope.result}" var="tweetlist">
-    <p>${tweetlist.title}</p>
-    <p>${tweetlist.url}</p>
+<c:forEach items="${requestScope.result}" var="redditList">
+    <p>${redditList.title}</p>
+    <p>${redditList.url}</p>
 </c:forEach>
 
 </body>

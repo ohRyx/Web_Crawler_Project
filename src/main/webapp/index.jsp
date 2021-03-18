@@ -10,7 +10,21 @@
 <%@include file="header.jsp" %>
 
 
-<%--<a href="hello-servlet">Hello Servlet</a>--%>
+<%--<c:forEach items="${requestScope.redditList}" var="redditList">
+    <p>${redditList.title}</p>
+    <a href="${redditList.url}" target="_blank">Link</a>
+</c:forEach>--%>
+
+<div class="box-border w-3/6 p-4 border-1">
+    <div class="border-2 border-red-500">
+        <c:forEach items="${requestScope.redditList}" var="redditList">
+            <div class="border-2 border-black hover:border-yellow-300">
+                    <%--<p>${redditList.title}</p>--%>
+                <a href="${redditList.url}" target="_blank">${redditList.title}
+            </div>
+        </c:forEach>
+    </div>
+</div>
 
 </body>
 </html>
