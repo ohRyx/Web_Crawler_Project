@@ -21,15 +21,19 @@ public class redditClass {
     private String title;
     private String url;
     private String noOfPost;
+    private Long comments;
+    private Double upvotes;
 
     public redditClass() {
 
     }
 
-    public redditClass(String title, String url) {
+    public redditClass(String title, String url, Long comments, Double upvotes) {
         super();
         this.title = title;
         this.url = url;
+        this.comments = comments;
+        this.upvotes = upvotes;
     }
 
     public String getTitle() {
@@ -46,6 +50,22 @@ public class redditClass {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Long getComments() {
+        return comments;
+    }
+
+    public void setComments(Long comments) {
+        this.comments = comments;
+    }
+
+    public Double getUpvotes() {
+        return upvotes;
+    }
+
+    public void setUpvotes(Double upvotes) {
+        this.upvotes = upvotes;
     }
 
     public void info() {

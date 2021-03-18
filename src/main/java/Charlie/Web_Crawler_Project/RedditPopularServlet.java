@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "RedditPopularServlet", value = "/r")
+@WebServlet(name = "RedditPopularServlet", value = "/redditpopular")
 public class RedditPopularServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,8 +22,11 @@ public class RedditPopularServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        List<redditClass> redditList = new ArrayList<redditClass>();
+        List<redditClass> tList = new ArrayList<redditClass>();
         String title, url;
+        Long comments;
+        Double upvotes;
+
         JSONParser jsonParser = new JSONParser();
         JSONObject data = null;
         try {
@@ -37,15 +40,16 @@ public class RedditPopularServlet extends HttpServlet {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            redditList.add(new redditClass(title, url));
-        }
+            comments = (Long)p_obj.get("Comments");
+            upvotes = (Double)p_obj.get("Upvotes");
+            tList.add(new redditClass(title, url, comments, upvotes));        }
 
-        for (redditClass articles : redditList) {
+        for (redditClass articles : tList) {
             articles.info();
         }
-        System.out.println("Total numbers of posts: " + redditList.size());
-        request.setAttribute("redditList", redditList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        System.out.println("Total numbers of posts: " + tList.size());
+        request.setAttribute("result", tList);
+        getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
 
     }
 
