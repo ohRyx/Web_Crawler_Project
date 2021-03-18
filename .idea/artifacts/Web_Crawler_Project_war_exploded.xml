@@ -12,6 +12,9 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Web_Crawler_Project" />
+          <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-databind-2.11.4.jar" path-in-jar="/" />
+          <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-annotations-2.11.4.jar" path-in-jar="/" />
+          <element id="extracted-dir" path="$PROJECT_DIR$/lib/jackson-core-2.11.4.jar" path-in-jar="/" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="twitter4j-core-4.0.7" />
@@ -25,6 +28,7 @@
           <element id="library" level="project" name="guava-mini-0.1.1" />
           <element id="library" level="project" name="commons-logging-1.2" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.13.1" />
+          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.11.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

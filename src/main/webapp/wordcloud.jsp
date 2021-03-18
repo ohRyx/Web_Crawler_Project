@@ -9,8 +9,10 @@
 <body class="bg-gray-500">
 <%@include file="header.jsp" %>
 
-
-<%--<a href="hello-servlet">Hello Servlet</a>--%>
+<div class="">
+    <h1>Word Cloud</h1>
+    <img src="${pageContext.request.contextPath}/image/wordcloud.png"/>
+</div>
 
 </body>
 </html>

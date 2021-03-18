@@ -52,7 +52,7 @@
     <orderEntry type="library" exported="" name="slf4j-api-1.7.30" level="project" />
     <orderEntry type="library" name="javax.servlet.jsp.jstl-api-1.2.2-sources" level="project" />
     <orderEntry type="library" exported="" name="commons-logging-1.2" level="project" />
-    <orderEntry type="library" exported="" name="javaee-api-6.0" level="project" />
+    <orderEntry type="library" name="javaee-api-6.0" level="project" />
     <orderEntry type="library" exported="" name="twitter4j-core-4.0.7" level="project" />
   </component>
 </module>
