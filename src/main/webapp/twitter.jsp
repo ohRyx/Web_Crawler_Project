@@ -15,9 +15,7 @@
 </div>
 <div class="text-gray-100 absolute inset-x-1/3 inset-y-36 px-64 py-2">
     <div class="w-56 h-8 relative bg-gray-700 p-1 rounded-md">
-<%--        action="tweet;wordcloud--%>
-<%--    onclick="a();"--%>
-        <form name="submitbtn" action="tweet" method="post">
+        <form action="tweet" method="post">
             <svg class="h-5 w-5 absolute left-0 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                  fill="currentColor">
                 <path fill-rule="evenodd"
@@ -31,8 +29,15 @@
 </div>
 
 
-
-<button id="myBtn">Open Word Cloud</button>
+<div class="text-gray-100 absolute inset-x-2/3 inset-y-36 px-28 py-1 text-center">
+    <div class="w-56 h-8 relative bg-gray-700 p-1 rounded-md">
+        <svg class="h-6 w-8 absolute left-0 ml-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+             fill="currentColor">
+            <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+        </svg>
+        <a class="bg-transparent text-gray-100" id="myBtn">Word Cloud</a>
+    </div>
+</div>
 
 
 <div id="myModal" class="modal">
@@ -44,7 +49,7 @@
     </div>
 </div>
 
-<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52">
+<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52 overflow-auto">
     <c:forEach items="${requestScope.twitterlist}" var="twitterlist">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
             <p class="font-black">${twitterlist.name}: ${twitterlist.tweet}</p>
@@ -64,18 +69,18 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal
-    btn.onclick = function() {
+    btn.onclick = function () {
         //refreshImage(document.getElementById("img"),"/image/wordcloud.png?t=");
         modal.style.display = "block";
     }
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
@@ -87,7 +92,7 @@
     //
     // el.src = "/image/wordcloud.png?t=" + timestamp;
 
-    function refreshImage(imgElement, imgURL){
+    function refreshImage(imgElement, imgURL) {
         // create a new timestamp
         var timestamp = new Date().getTime();
 
@@ -99,7 +104,6 @@
     }
 
 </script>
-
 
 
 </body>

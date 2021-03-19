@@ -23,10 +23,11 @@ public class RedditCrawlPostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String search = request.getParameter("searchReddit");
+        int num = Integer.parseInt(request.getParameter("noReddit"));
 
 
         try {
-            RedditCrawl.crawlPost(search);
+            RedditCrawl.crawlPost(search, num);
         } catch (ParseException e) {
             e.printStackTrace();
         }

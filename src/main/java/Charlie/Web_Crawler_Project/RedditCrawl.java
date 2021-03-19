@@ -92,7 +92,7 @@ public class RedditCrawl {
         }
     }
 
-    public static void crawlPost(String search) throws RestClientException, ParseException {
+    public static void crawlPost(String search, int num) throws RestClientException, ParseException {
         String articlesTitle, articlesUrl, selfText;
         Long comments;
         Double upVotes;
@@ -105,7 +105,8 @@ public class RedditCrawl {
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
         //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=30";
+        //String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=" + num;
+        String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=" + num;
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
         JSONObject obj = new JSONObject();
