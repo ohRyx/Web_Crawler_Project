@@ -57,6 +57,8 @@ public class redditClass {
     }
 
     public void setComments(Long comments) {
+        if (comments < 0 )
+            throw new IllegalArgumentException("Invalid numbers of comments");
         this.comments = comments;
     }
 
@@ -65,6 +67,8 @@ public class redditClass {
     }
 
     public void setUpvotes(Double upvotes) {
+        if (upvotes < 0)
+            throw new IllegalArgumentException("Invalid upvotes number");
         this.upvotes = upvotes;
     }
 
