@@ -57,6 +57,12 @@ public class TwitterCrawlServlet extends HttpServlet {
         //get tweets and write to txt file
         writeTweets.writeTxt(tweetsList, "tweets.txt");
 
-        getServletContext().getRequestDispatcher("/twitter.jsp").forward(request, response);
+//        //init wordcloud object
+//        WordCloud wordCloud = new WordCloud();
+//
+//        //create word cloud using tweets.txt
+//        wordCloud.createWordCloud("tweets.txt");
+
+        getServletContext().getRequestDispatcher("/wordcloud").include(request, response);
     }
 }
