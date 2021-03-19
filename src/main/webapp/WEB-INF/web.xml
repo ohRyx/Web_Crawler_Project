@@ -13,4 +13,19 @@
         <error-code>404</error-code>
         <location>/error404.jsp</location>
     </error-page>
+
+    <servlet>
+        <servlet-name>RedditPopularServlet</servlet-name>
+        <servlet-class>Charlie.Web_Crawler_Project.RedditPopularServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RedditPopularServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
 </web-app>

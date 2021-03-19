@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "RedditPopularServlet", value = "/redditpopular")
+@WebServlet(name = "RedditPopularServlet")
 public class RedditPopularServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class RedditPopularServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        List<redditClass> tList = new ArrayList<redditClass>();
+        List<redditClass> redditlist = new ArrayList<redditClass>();
         String title, url;
         Long comments;
         Double upvotes;
@@ -37,21 +37,19 @@ public class RedditPopularServlet extends HttpServlet {
         JSONArray data_arr = (JSONArray) data.get("Articles");
         for (Object obj : data_arr) {
             JSONObject p_obj = (JSONObject) obj;
-            System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            comments = (Long)p_obj.get("Comments");
-            upvotes = (Double)p_obj.get("Upvotes");
-            tList.add(new redditClass(title, url, comments, upvotes));        }
-
-        for (redditClass articles : tList) {
-            articles.info();
+            comments = (Long) p_obj.get("Comments");
+            upvotes = (Double) p_obj.get("Upvotes");
+            redditlist.add(new redditClass(title, url, comments, upvotes));
         }
-        System.out.println("Total numbers of posts: " + tList.size());
-        request.setAttribute("result", tList);
-        getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
+
+        System.out.println("Reddit Popular Crawl Works!");
+        request.setAttribute("redditList", redditlist);
+        getServletContext().getRequestDispatcher("/trend").include(request, response);
 
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

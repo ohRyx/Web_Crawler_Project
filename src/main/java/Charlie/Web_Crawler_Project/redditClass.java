@@ -75,5 +75,7 @@ public class redditClass {
     public void info() {
         System.out.println("Title: " + title);
         System.out.println("URL: " + url + "\n");
+        System.out.println("Comments" + comments + "\n");
+        System.out.println("Upvotes" + upvotes + "\n");
     }
 }

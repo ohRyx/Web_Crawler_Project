@@ -28,7 +28,7 @@ public class RedditCrawlPostServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        List<redditClass> tList = new ArrayList<redditClass>();
+        List<redditClass> redditlist = new ArrayList<redditClass>();
         String title, url;
         Double upvotes;
         Long comments;
@@ -45,16 +45,15 @@ public class RedditCrawlPostServlet extends HttpServlet {
             System.out.println(p_obj);
             title = (String) p_obj.get("Title");
             url = (String) p_obj.get("Url");
-            comments = (Long)p_obj.get("Comments");
-            upvotes = (Double)p_obj.get("Upvotes");
-            tList.add(new redditClass(title, url, comments, upvotes));
+            comments = (Long) p_obj.get("Comments");
+            upvotes = (Double) p_obj.get("Upvotes");
+            redditlist.add(new redditClass(title, url, comments, upvotes));
         }
 
-        for (redditClass articles : tList) {
+        /*        for (redditClass articles : redditlist) {
             articles.info();
-        }
-        System.out.println("Total numbers of posts: " + tList.size());
-        request.setAttribute("result", tList);
+        }*/
+        request.setAttribute("redditcrawl", redditlist);
         getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
 
     }

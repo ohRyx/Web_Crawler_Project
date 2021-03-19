@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "TwitterCrawlServlet", value = "/tweet2")
+@WebServlet(name = "TwitterCrawlServlet", value = "/tweet")
 public class TwitterCrawlServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class TwitterCrawlServlet extends HttpServlet {
         tweets.tweetManager();
 
         //set query keyword and tweet count
-        String keyword = request.getParameter("search");
+        String keyword = request.getParameter("searchTwitter");
         int numberOfTweets = 10; //add_the_paramater_here
 
         //create tweets list
@@ -38,23 +38,24 @@ public class TwitterCrawlServlet extends HttpServlet {
 
         //add tweet data to twitterlist to display on page
         for (Status status : tweetsList) {
-            String name = status.getUser().getName();
+            String name = "@" + status.getUser().getName();
             String tweet = status.getText();
+            Integer retcount = status.getRetweetCount();
 
             //System.out.println(name);
             System.out.println(tweet);
 
-            twitterList.add(new twitterClass(name, tweet));
+            twitterList.add(new twitterClass(name, tweet, retcount));
             request.setAttribute("twitterlist", twitterList);
         }
         //create WriteTweets object
         Writer writeTweets = new Writer();
 
         //create a text file
-        writeTweets.createTxt();
+        writeTweets.createTxt("tweets.txt");
 
         //get tweets and write to txt file
-        writeTweets.writeTxt(tweetsList);
+        writeTweets.writeTxt(tweetsList, "tweets.txt");
 
         getServletContext().getRequestDispatcher("/twitter.jsp").forward(request, response);
     }

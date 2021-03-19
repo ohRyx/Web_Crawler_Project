@@ -5,7 +5,7 @@
             <div class="flex space-x-3">
                 <!-- logo -->
                 <div>
-                    <a href="index.jsp" class="flex items-center py-5 px-2 text-gray-700 hover:text-red-600">
+                    <a href="index" class="flex items-center py-5 px-2 text-gray-700 hover:text-red-600">
                         <svg class="h-6 w-6 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                              stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
