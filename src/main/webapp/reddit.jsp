@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52">
+<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52 overflow-auto">
     <c:forEach items="${requestScope.redditcrawl}" var="redditList" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
             <a class="font-black" href="${redditList.url}" target="_blank">${theCount.count}) ${redditList.title}

@@ -105,7 +105,7 @@ public class RedditCrawl {
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
         //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=10";
+        String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=30";
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
         JSONObject obj = new JSONObject();

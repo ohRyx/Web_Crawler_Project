@@ -13,7 +13,7 @@
     <p class="text-5xl font-semibold">Reddit Popular Post </p>
 </div>
 
-<div class="w-2/5 absolute inset-y-48 inset-x-14 p-2">
+<div class="w-2/5 absolute inset-y-48 inset-x-14 p-2 overflow-auto">
     <c:forEach items="${requestScope.redditList}" var="redditList" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
             <a class="font-black" href="${redditList.url}" target="_blank">${theCount.count}) ${redditList.title}
