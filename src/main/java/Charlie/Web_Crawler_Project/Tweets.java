@@ -7,11 +7,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Tweets. Contains tweet functions in order for tweet retrieval
+ *
+ * @author Akmal, Princeton
+ * @version 1.0
+ */
 public class Tweets {
     //Declare global variable twitter
     private Twitter twitter;
 
-    //Establish twitter connection
+    /**
+     * Tweet manager to establish twitter connection.
+     */
     public void tweetManager() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -23,7 +31,15 @@ public class Tweets {
         twitter = tf.getInstance();
     }
 
-    //Perform query based on keyword and number
+    /**
+     * Perform query to retrieve tweets.
+     *
+     * @param keyword the keyword
+     * @param num     the num
+     * @return the list
+     * @throws InterruptedException the interrupted exception
+     * @throws IOException          the io exception
+     */
     public List<Status> performQuery(String keyword, String num) throws InterruptedException, IOException {
         //Filter out tweets with retweets, links, replies and images
         Query query = new Query(keyword + " -filter:retweets -filter:links -filter:replies -filter:images");
@@ -62,7 +78,13 @@ public class Tweets {
         return tweets;
     }
 
-    //Retrieves the trends of a particular location.
+    /**
+     * Gets location trends.
+     *
+     * @param location the location
+     * @return the location trends
+     * @throws TwitterException the twitter exception
+     */
     public List<String> getLocationTrends(String location) throws TwitterException {
 
         Integer idTrendLocation = getTrendLocationId(location);
@@ -92,6 +114,12 @@ public class Tweets {
         return trendsList;
     }
 
+    /**
+     * Gets location trend id
+     *
+     * @param placeName the location name
+     * @return the location id
+     */
     private Integer getTrendLocationId(String placeName) {
         int LocationID = 0;
 
