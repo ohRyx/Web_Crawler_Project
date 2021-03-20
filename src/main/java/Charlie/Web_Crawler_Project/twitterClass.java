@@ -16,7 +16,7 @@ public class twitterClass {
     /**
      * Instantiates a new Twitter class.
      */
-//class constructor
+    //class constructor
     public twitterClass() {
     }
 
@@ -27,7 +27,6 @@ public class twitterClass {
      * @param tweet   the tweet
      * @param rtcount the rtcount
      */
-
     public twitterClass(String name, String tweet, int rtcount) {
         this.name = name;
         this.tweet = tweet;
@@ -75,13 +74,19 @@ public class twitterClass {
      *
      * @return the rtcount
      */
-    public Integer getRtcount() { return rtcount; }
+    public Integer getRtcount() {
+        return rtcount;
+    }
 
     /**
      * Sets rtcount.
      *
      * @param rtcount the rtcount
      */
-    public void setRtcount(Integer rtcount) { this.rtcount = rtcount; }
+    public void setRtcount(Integer rtcount) {
+        if (rtcount < 0)
+            throw new IllegalArgumentException("Invalid rtcount number");
+        this.rtcount = rtcount;
+    }
 }
 

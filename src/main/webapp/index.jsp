@@ -7,12 +7,15 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-400">
+<%--Directive tags link to header.jsp--%>
 <%@include file="header.jsp" %>
 
+<%--Display Reddit header--%>
 <div class="absolute inset-y-36 inset-x-80">
     <p class="text-5xl font-semibold">Reddit Popular Post </p>
 </div>
 
+<%--Display Reddit Popular Posts--%>
 <div class="w-2/5 absolute inset-y-48 inset-x-14 p-2 overflow-auto">
     <c:forEach items="${requestScope.redditList}" var="redditList" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
@@ -22,10 +25,12 @@
     </c:forEach>
 </div>
 
+<%--Display Twitter header--%>
 <div class="absolute inset-y-36 inset-x-2/4 px-72">
     <p class="text-5xl font-semibold whitespace-nowrap">Twitter Global Trends</p>
 </div>
 
+<%--Display Twitter Global Trends--%>
 <div class="w-2/5 absolute inset-y-48 inset-x-1/2 p-2 cursor-default">
     <c:forEach items="${requestScope.trendsList}" var="trendsList" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
@@ -33,7 +38,6 @@
         </div>
     </c:forEach>
 </div>
-
 </body>
 </html>
 

@@ -1,6 +1,7 @@
 package Charlie.Web_Crawler_Project;
 
 import twitter4j.Status;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -22,7 +23,8 @@ public class TwitterCrawlServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
         //initialise Tweets object and call tweetManager() to establish twitter connection
         Tweets tweets = new Tweets();
         tweets.tweetManager();
@@ -95,13 +97,10 @@ public class TwitterCrawlServlet extends HttpServlet {
                     analysisCounter = 0;
                 }
             }
-
             sen = NLPSentiment.getOverallSentiment();
             System.out.println("Sentiment Analysis Complete!\n\n");
             //Final output after analysis is complete
             System.out.println(sen);
-
-
         }
         //set attribute to pass variables from servlet to GUI
         request.setAttribute("twitterlist", twitterList);

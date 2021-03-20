@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This is a redditClass reading and storing Reddit post
+ * This is a object class, used to store Reddit post details
  *
  * @author gwwc0
  * @version 1.0

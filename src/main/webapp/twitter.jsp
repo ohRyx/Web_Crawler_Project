@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="wordcloud.css">
 </head>
 <body class="bg-gray-400">
+<%--Directive tags link to header.jsp--%>
 <%@include file="header.jsp" %>
 
-
+<%--Twitter page header--%>
 <div class="absolute inset-x-1/3 inset-y-24 px-40 whitespace-nowrap">
     <p class="text-5xl font-semibold">Crawl Twitter Tweets</p>
 </div>
 
+<%--The form consist of 2 search input(tweets & number), submit button & error message--%>
 <form action="tweet" method="post">
     <div class="text-gray-100 absolute inset-x-96 inset-y-40">
         <div class="w-56 h-8 relative inset-x-32 bg-gray-700 p-1 rounded-md">
@@ -49,6 +51,7 @@
     </div>
 </form>
 
+<%--Word Cloud Button--%>
 <div class="text-gray-100 absolute inset-x-2/3 inset-y-40 px-48 text-center cursor-pointer">
     <div class="w-36 h-8 relative bg-gray-700 p-1 rounded-md">
         <svg class="h-6 w-8 absolute left-0 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -59,7 +62,7 @@
     </div>
 </div>
 
-
+<%--Display Word Cloud--%>
 <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -69,10 +72,12 @@
     </div>
 </div>
 
+<%--Display the sentiment analysis message--%>
 <div class=" relative inset-x-96 inset-y-28 ml-60 bg-green-400 w-6/12 rounded-lg">
     <p class="text-xl font-semibold rounded-lg px-2 text-center">${sen}</p>
 </div>
 
+<%--Display the twitter result--%>
 <div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-64 overflow-auto">
     <c:forEach items="${requestScope.twitterlist}" var="twitterlist" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
@@ -83,6 +88,7 @@
     </c:forEach>
 </div>
 
+<%--JavaScript to make the word cloud pop up window--%>
 <script>
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -111,12 +117,6 @@
         }
     }
 
-    // var timestamp = new Date().getTime();
-    //
-    // var el = document.getElementById("img");
-    //
-    // el.src = "/image/wordcloud.png?t=" + timestamp;
-
     function refreshImage(imgElement, imgURL) {
         // create a new timestamp
         var timestamp = new Date().getTime();
@@ -127,9 +127,6 @@
 
         el.src = imgURL + queryString;
     }
-
 </script>
-
-
 </body>
 </html>

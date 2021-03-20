@@ -1,4 +1,4 @@
-<!-- navbar goes here -->
+<%--Navigation Bar--%>
 <nav class="bg-gray-100">
     <div class="max-w-6xl px-3">
         <div class="flex justify-between">
@@ -19,7 +19,7 @@
 
                 <!-- primary nav -->
                 <div class="md:flex items-center space-x-1">
-                    <a href="#" class="py-5 px-3 text-gray-700 hover:text-blue-500">About Us</a>
+                    <a href="about.jsp" class="py-5 px-3 text-gray-700 hover:text-blue-500">About Us</a>
                     <a href="twitter.jsp" class="py-5 px-3 text-gray-700 hover:text-blue-500">Twitter</a>
                     <a href="reddit.jsp" class="py-5 px-3 text-gray-700 hover:text-blue-500">Reddit</a>
                 </div>

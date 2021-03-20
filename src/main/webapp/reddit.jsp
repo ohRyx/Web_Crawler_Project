@@ -6,14 +6,15 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-400">
+<%--Directive tags link to header.jsp--%>
 <%@include file="header.jsp" %>
 
-
+<%--Reddit page header--%>
 <div class="absolute inset-x-1/3 inset-y-24 px-44 whitespace-nowrap">
     <p class="text-5xl font-semibold">Crawl Reddit Post</p>
 </div>
 
-
+<%--The form consist of 2 search input(post & number), submit button & error message--%>
 <form action="redditcrawl" method="post">
 
     <div class="text-gray-100 absolute inset-x-96 inset-y-40">
@@ -52,7 +53,7 @@
     </div>
 </form>
 
-
+<%--Display the reddit result--%>
 <div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52 overflow-auto">
     <c:forEach items="${requestScope.redditcrawl}" var="redditList" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">

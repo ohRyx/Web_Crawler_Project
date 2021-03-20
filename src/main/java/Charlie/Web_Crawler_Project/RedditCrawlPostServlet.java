@@ -22,12 +22,14 @@ import java.util.List;
 @WebServlet(name = "RedditCrawlPostServlet", value = "/redditcrawl")
 public class RedditCrawlPostServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
         getServletContext().getRequestDispatcher("/reddit.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
 
         //Declare variable
         String search = request.getParameter("searchReddit");

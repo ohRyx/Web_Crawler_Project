@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Ryx
-  Date: 16/3/2021
-  Time: 7:58 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +5,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-gray-400">
+
+<%--Display error message--%>
 <div class="text-light-blue-900 flex h h-screen text-center">
     <div class="m-auto">
         <h1 class="text-9xl">Oh No!!</h1>

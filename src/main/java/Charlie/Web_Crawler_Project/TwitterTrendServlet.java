@@ -1,6 +1,7 @@
 package Charlie.Web_Crawler_Project;
 
 import twitter4j.TwitterException;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -57,7 +58,8 @@ public class TwitterTrendServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
 
     }
 }
