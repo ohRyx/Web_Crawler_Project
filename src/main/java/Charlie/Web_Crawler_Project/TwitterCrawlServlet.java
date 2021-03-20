@@ -28,7 +28,7 @@ public class TwitterCrawlServlet extends HttpServlet {
 
         //create tweets list
         List<Status> tweetsList = new ArrayList<Status>();
-        List<twitterClass>twitterList = new ArrayList<>();
+        List<twitterClass> twitterList = new ArrayList<>();
 
 
         if (Utils.isEmpty(keyword, num)) {
@@ -78,13 +78,12 @@ public class TwitterCrawlServlet extends HttpServlet {
             int analysisCounter = 0;
             int analysisTotal = 0;
             //Starting analysis
-            for(Status t : tweetsList) {
+            for (Status t : tweetsList) {
                 NLPSentiment.getSentimentValue(t.getText());
                 //Console feedback
                 analysisCounter++;
                 analysisTotal++;
-                if(analysisCounter == 20)
-                {
+                if (analysisCounter == 20) {
                     System.out.println("Tweets analyzed: " + analysisTotal);
                     analysisCounter = 0;
                 }

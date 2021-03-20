@@ -3,6 +3,7 @@ package Charlie.Web_Crawler_Project;
 import java.util.Properties;
 
 import java.text.DecimalFormat;
+
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
@@ -16,13 +17,17 @@ public class NLPSentiment {
     static StanfordCoreNLP pipeline;
     //Trackers
     static int VNegCount, NegCount, NeuCount, PosCount, vPosCount;
+
     public static void init() {
         //Starting new pipeline for sentiment using NLP Lib
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, parse, sentiment");
         pipeline = new StanfordCoreNLP(props);
-        VNegCount = 0; NegCount = 0; NeuCount = 0;
-        PosCount = 0; vPosCount = 0;
+        VNegCount = 0;
+        NegCount = 0;
+        NeuCount = 0;
+        PosCount = 0;
+        vPosCount = 0;
     }
 
     public static int getSentimentValue(String data) {
@@ -48,8 +53,7 @@ public class NLPSentiment {
                 }
             }
         }
-        switch (SentimentValue)
-        {
+        switch (SentimentValue) {
             case 0:
                 VNegCount++;
             case 1:
@@ -65,26 +69,25 @@ public class NLPSentiment {
     }
 
     //Getting the overall sentiment after they have been analyzed
-    public static String getOverallSentiment()
-    {
+    public static String getOverallSentiment() {
         //Used to format the values for output
         DecimalFormat df = new DecimalFormat("0.0");
 
         //Converting into percentages
         int totalCount = VNegCount + NegCount + NeuCount + PosCount + vPosCount;
-        double VNegPercent = ((double)VNegCount / totalCount) * 100;
-        double NegPercent = ((double)NegCount / totalCount) * 100;
-        double NeuPercent = ((double)NeuCount / totalCount) * 100;
-        double PosPercent = ((double)PosCount / totalCount) * 100;
-        double vPosPercent = ((double)vPosCount / totalCount) * 100;
+        double VNegPercent = ((double) VNegCount / totalCount) * 100;
+        double NegPercent = ((double) NegCount / totalCount) * 100;
+        double NeuPercent = ((double) NeuCount / totalCount) * 100;
+        double PosPercent = ((double) PosCount / totalCount) * 100;
+        double vPosPercent = ((double) vPosCount / totalCount) * 100;
 
         //Formatting text for output
         String output = "Overall Sentiment breakdown is: " +
-                        "\nVery Negative: " + df.format(VNegPercent) + "%" +
-                        "\nNegative: " + df.format(NegPercent) + "%" +
-                        "\nNeutral: " + df.format(NeuPercent) + "%" +
-                        "\nPositive: " + df.format(PosPercent) + "%" +
-                        "\nVery Positive: " + df.format(vPosPercent) + "%";
+                "\nVery Negative: " + df.format(VNegPercent) + "%" +
+                "\nNegative: " + df.format(NegPercent) + "%" +
+                "\nNeutral: " + df.format(NeuPercent) + "%" +
+                "\nPositive: " + df.format(PosPercent) + "%" +
+                "\nVery Positive: " + df.format(vPosPercent) + "%";
 
         return output;
     }

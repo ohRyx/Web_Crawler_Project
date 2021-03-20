@@ -29,35 +29,35 @@
           <element id="library" level="project" name="commons-logging-1.2" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.13.1" />
           <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.11.4" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/xom.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jollyday.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/protobuf.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/joda-time.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/slf4j-api.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/javax.json.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/slf4j-simple.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-core-0.39.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-ddense-0.39.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-simple-0.39.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-core-2.3.0.1.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/xom-1.3.2-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-core-0.39-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jollyday-0.4.9-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-ddense-0.39-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/ejml-simple-0.39-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/joda-time-2.10.5-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-core-2.3.0.1-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/javax.activation-api-1.2.0.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/javax.json-api-1.0-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-api-2.4.0-b180830.0359.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-impl-2.4.0-b180830.0438.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-models.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-javadoc.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/javax.activation-api-1.2.0-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-api-2.4.0-b180830.0359-sources.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/../Desktop/stanford-corenlp-latest/stanford-corenlp-4.2.0/jaxb-impl-2.4.0-b180830.0438-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/xom.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jollyday.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/protobuf.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/joda-time.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/slf4j-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/javax.json.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/slf4j-simple.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-core-0.39.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-ddense-0.39.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-simple-0.39.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-core-2.3.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/xom-1.3.2-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-core-0.39-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jollyday-0.4.9-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-ddense-0.39-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/ejml-simple-0.39-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/joda-time-2.10.5-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-core-2.3.0.1-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/javax.activation-api-1.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/javax.json-api-1.0-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-api-2.4.0-b180830.0359.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-impl-2.4.0-b180830.0438.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-models.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/stanford-corenlp-4.2.0-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/javax.activation-api-1.2.0-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-api-2.4.0-b180830.0359-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../Program Files/Development/stanford-corenlp-4.2.0/jaxb-impl-2.4.0-b180830.0438-sources.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">
