@@ -19,7 +19,9 @@ import java.util.Map;
 
 /**
  * This is a redditClass reading and storing Reddit post
+ *
  * @author gwwc0
+ * @version 1.0
  */
 public class redditClass {
     private String title;
@@ -37,6 +39,7 @@ public class redditClass {
 
     /**
      * Constructor for redditClass
+     *
      * @param title
      * @param url
      * @param comments
@@ -52,6 +55,7 @@ public class redditClass {
 
     /**
      * Get the Title of reddit post
+     *
      * @return title in string
      */
     public String getTitle() {
@@ -60,6 +64,7 @@ public class redditClass {
 
     /**
      * Set the Title of reddit post
+     *
      * @param title the tile in string
      */
     public void setTitle(String title) {
@@ -68,6 +73,7 @@ public class redditClass {
 
     /**
      * Get the Url of reddit post
+     *
      * @return url in string
      */
     public String getUrl() {
@@ -76,6 +82,7 @@ public class redditClass {
 
     /**
      * Set the Url of reddit post
+     *
      * @param url the url in string
      */
     public void setUrl(String url) {
@@ -84,6 +91,7 @@ public class redditClass {
 
     /**
      * Get the amount of comment of the reddit post
+     *
      * @return comments in long
      */
     public Long getComments() {
@@ -92,17 +100,19 @@ public class redditClass {
 
     /**
      * Set the amount of comment of the reddit post
+     *
      * @param comments the comments in long
-     * @exception IllegalArgumentException if the comments is negative
+     * @throws IllegalArgumentException if the comments is negative
      */
     public void setComments(Long comments) {
-        if (comments < 0 )
+        if (comments < 0)
             throw new IllegalArgumentException("Invalid numbers of comments");
         this.comments = comments;
     }
 
     /**
      * Get the number of upvotes of the reddit post
+     *
      * @return upvotes in double
      */
     public Double getUpvotes() {
@@ -111,8 +121,9 @@ public class redditClass {
 
     /**
      * Set the number of upvotes of the reddit post
+     *
      * @param upvotes the upvotes in double
-     * @exception IllegalArgumentException if the upvotes is negative
+     * @throws IllegalArgumentException if the upvotes is negative
      */
     public void setUpvotes(Double upvotes) {
         if (upvotes < 0)

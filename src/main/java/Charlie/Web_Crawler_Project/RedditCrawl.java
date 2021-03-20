@@ -15,8 +15,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type Reddit crawl. This is where various function related to Reddit will be use.
+ *
+ * @author gwwc0
+ * @version 1.0
+ */
 public class RedditCrawl {
-
+    //  Get Authentication Code, in order to crawl Reddit
     private static String getAuthToken() {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -40,11 +46,19 @@ public class RedditCrawl {
         return String.valueOf(map.get("access_token"));
     }
 
+    /**
+     * Crawl popular post.
+     *
+     * @throws RestClientException the rest client exception
+     * @throws ParseException      the parse exception
+     */
     public static void crawlPopularPost() throws RestClientException, ParseException {
+        //Declare Variables
         String articlesTitle, articlesUrl, selfText;
         Long comments;
         Double upVotes;
 
+        //Initialization
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         String authToken = getAuthToken();
@@ -55,9 +69,11 @@ public class RedditCrawl {
         String url = "https://oauth.reddit.com/r/popular/.json?geo_filter=SG&limit=20";
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
+        // Create object and list
         JSONObject obj = new JSONObject();
         JSONArray list = new JSONArray();
 
+        // Crawl the data from Reddit
         JSONParser parse = new JSONParser();
         JSONObject data_obj = (JSONObject) parse.parse(response.getBody());
         JSONObject data = (JSONObject) data_obj.get("data");
@@ -71,7 +87,7 @@ public class RedditCrawl {
             comments = (Long) o_data.get("num_comments");
             upVotes = (Double) o_data.get("upvote_ratio");
 
-
+            //Create a new JSON Object & store the crawl data
             JSONObject crawl_obj = new JSONObject();
             crawl_obj.put("Title", articlesTitle);
             crawl_obj.put("Url", articlesUrl);
@@ -81,6 +97,7 @@ public class RedditCrawl {
             list.add(crawl_obj);
             obj.put("Articles", list);
 
+            // Write to JSON File
             try {
                 FileWriter file = new FileWriter("Reddit_post.json");
                 file.write(obj.toString());
@@ -92,11 +109,21 @@ public class RedditCrawl {
         }
     }
 
+    /**
+     * Crawl post.
+     *
+     * @param search the search
+     * @param num    the num
+     * @throws RestClientException the rest client exception
+     * @throws ParseException      the parse exception
+     */
     public static void crawlPost(String search, String num) throws RestClientException, ParseException {
+        //Declare Variables
         String articlesTitle, articlesUrl, selfText;
         Long comments;
         Double upVotes;
 
+        //Initialization
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         String authToken = getAuthToken();
@@ -104,14 +131,14 @@ public class RedditCrawl {
         headers.put("User-Agent",
                 Collections.singletonList("tomcat:com.reddit-test:v1.0 (by /u/TeamCharlie)"));
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        //String url = "https://oauth.reddit.com/r/" + subReddit + "/hot/.json?limit=" + numOfpost;
-        //String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=" + num;
         String url = "https://oauth.reddit.com/r/" + search + "/.json?limit=" + num;
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
+        // Create object and list
         JSONObject obj = new JSONObject();
         JSONArray list = new JSONArray();
 
+        //Create a new JSON Object & store the crawl data
         JSONParser parse = new JSONParser();
         JSONObject data_obj = (JSONObject) parse.parse(response.getBody());
         JSONObject data = (JSONObject) data_obj.get("data");
@@ -125,7 +152,7 @@ public class RedditCrawl {
             comments = (Long) o_data.get("num_comments");
             upVotes = (Double) o_data.get("upvote_ratio");
 
-
+            //Create a new JSON Object & store the crawl data
             JSONObject crawl_obj = new JSONObject();
             crawl_obj.put("Title", articlesTitle);
             crawl_obj.put("Url", articlesUrl);
@@ -135,6 +162,7 @@ public class RedditCrawl {
             list.add(crawl_obj);
             obj.put("Articles", list);
 
+            // Write to JSON File
             try {
                 FileWriter file = new FileWriter("Reddit_post.json");
                 file.write(obj.toString());
