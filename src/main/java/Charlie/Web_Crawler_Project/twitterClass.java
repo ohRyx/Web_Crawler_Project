@@ -82,6 +82,10 @@ public class twitterClass {
      *
      * @param rtcount the rtcount
      */
-    public void setRtcount(Integer rtcount) { this.rtcount = rtcount; }
+    public void setRtcount(Integer rtcount) {
+        if (rtcount < 0)
+            throw new IllegalArgumentException("Invalid rtcount number");
+        this.rtcount = rtcount;
+    }
 }
 
