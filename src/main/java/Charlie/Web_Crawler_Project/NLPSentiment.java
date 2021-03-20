@@ -12,12 +12,36 @@ import edu.stanford.nlp.sentiment.SentimentCoreAnnotations.SentimentAnnotatedTre
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
 
+/**
+ * The type Nlp sentiment.
+ */
 public class NLPSentiment {
-    //Only 1 instance
+    /**
+     * The constant pipeline.
+     */
+//Only 1 instance
     static StanfordCoreNLP pipeline;
-    //Trackers
-    static int VNegCount, NegCount, NeuCount, PosCount, vPosCount;
+    /**
+     * The constant VNegCount.
+     */
+//Trackers
+    static int VNegCount, /**
+     * The Neg count.
+     */
+    NegCount, /**
+     * The Neu count.
+     */
+    NeuCount, /**
+     * The Pos count.
+     */
+    PosCount, /**
+     * The V pos count.
+     */
+    vPosCount;
 
+    /**
+     * Init.
+     */
     public static void init() {
         //Starting new pipeline for sentiment using NLP Lib
         Properties props = new Properties();
@@ -30,6 +54,12 @@ public class NLPSentiment {
         vPosCount = 0;
     }
 
+    /**
+     * Gets sentiment value.
+     *
+     * @param data the data
+     * @return the sentiment value
+     */
     public static int getSentimentValue(String data) {
 
         //Sentiment Value based on the library
@@ -68,7 +98,11 @@ public class NLPSentiment {
         return SentimentValue;
     }
 
-    //Getting the overall sentiment after they have been analyzed
+    /**
+     * Getting the overall sentiment after they have been analyzed.
+     *
+     * @return the overall sentiment
+     */
     public static String getOverallSentiment() {
         //Used to format the values for output
         DecimalFormat df = new DecimalFormat("0.0");

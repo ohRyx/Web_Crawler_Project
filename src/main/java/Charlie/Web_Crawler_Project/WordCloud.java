@@ -16,12 +16,23 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The type Word cloud.
+ */
 public class WordCloud {
-    //declare constructor
+    /**
+     * Instantiates a new Word cloud.
+     */
+//declare constructor
     public WordCloud() {
     }
 
-    //declare function to create word cloud
+    /**
+     * Create word cloud.
+     *
+     * @param tweets the tweets
+     * @throws IOException the io exception
+     */
     public void createWordCloud(String tweets) throws IOException {
         //create word cloud
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
