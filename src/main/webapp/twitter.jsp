@@ -69,6 +69,8 @@
     </div>
 </div>
 
+${sen}
+
 <div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52 overflow-auto">
     <c:forEach items="${requestScope.twitterlist}" var="twitterlist" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">

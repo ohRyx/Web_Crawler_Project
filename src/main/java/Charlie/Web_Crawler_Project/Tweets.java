@@ -3,10 +3,8 @@ package Charlie.Web_Crawler_Project;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Tweets {
@@ -24,10 +22,9 @@ public class Tweets {
         twitter = tf.getInstance();
     }
 
-    //Perform query
+    //Perform query based on keyword and number
     public List<Status> performQuery(String keyword, String num) throws InterruptedException, IOException {
         Query query = new Query(keyword + " -filter:retweets -filter:links -filter:replies -filter:images");
-        int numberOfTweets = Integer.parseInt(num);
 
         //set language to English
         query.setLang("en");
@@ -36,7 +33,8 @@ public class Tweets {
         //create arrayList to store tweets
         ArrayList<Status> tweets = new ArrayList<Status>();
         int write_count = 1;
-        //&& numberOfTweets/100 < write_count+1
+        int numberOfTweets = Integer.parseInt(num);
+
         //get tweets
         while (tweets.size() < numberOfTweets) {
             if (numberOfTweets - tweets.size() > 100)
@@ -48,6 +46,8 @@ public class Tweets {
 
                 //add tweets to arrayList tweets
                 tweets.addAll(result.getTweets());
+
+                //System feedback
                 System.out.println("Gathered " + tweets.size() + " tweets");
 
                 for (Status t : tweets)
@@ -57,8 +57,6 @@ public class Tweets {
                 System.out.println("Couldn't connect: " + te);
             }
             query.setMaxId(lastID - 1);
-
-            write_count++;
         }
         return tweets;
     }

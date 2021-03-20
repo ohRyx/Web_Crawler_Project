@@ -46,6 +46,7 @@ public class TwitterTrendServlet extends HttpServlet {
         //store trends in txt file
         writeTweets.storeStringTxt(trends, "trends.txt");
         System.out.println("Twiiter Trends Crawl Works!");
+        System.out.println("TRY ");
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
 

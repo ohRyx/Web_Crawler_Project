@@ -24,6 +24,7 @@ public class TwitterCrawlServlet extends HttpServlet {
         //set query keyword and tweet count
         String keyword = request.getParameter("searchTwitter");
         String num = request.getParameter("noTweets");
+        String sen = "";
         String error = "";
 
         //create tweets list
@@ -66,7 +67,6 @@ public class TwitterCrawlServlet extends HttpServlet {
 
             //create a text file
             writeTweets.createTxt("tweets.txt");
-            writeTweets.createTxt("status.txt");
 
             //get tweets and write to txt file
             writeTweets.writeTxt(tweetsList, "tweets.txt");
@@ -89,14 +89,16 @@ public class TwitterCrawlServlet extends HttpServlet {
                 }
             }
 
-            List<String> sentiList = new ArrayList<>();
+            sen = NLPSentiment.getOverallSentiment();
             System.out.println("Sentiment Analysis Complete!\n\n");
             //Final output after analysis is complete
             System.out.println(NLPSentiment.getOverallSentiment());
+            System.out.println(sen);
 
 
         }
         request.setAttribute("twitterlist", twitterList);
+        request.setAttribute("sen", sen);
         getServletContext().getRequestDispatcher("/wordcloud").include(request, response);
     }
 }
