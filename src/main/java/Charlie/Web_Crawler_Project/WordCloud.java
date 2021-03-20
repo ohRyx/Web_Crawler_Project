@@ -17,26 +17,34 @@ import java.util.Collection;
 import java.util.List;
 
 public class WordCloud {
+    //declare constructor
     public WordCloud() {
-
     }
 
+    //declare function to create word cloud
     public void createWordCloud(String tweets) throws IOException {
         //create word cloud
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
 
-        //added in stopwords for word cloud from stoplist.txt
-        Collection<String> stopwords = new ArrayList<String>(Files.readAllLines(Paths.get("stoplist.txt"))); //stoplist"+ File.separator+"
-        frequencyAnalyzer.setStopWords(stopwords); //must put Collection<String>
+        //added in stop words for word cloud from stoplist.txt
+        Collection<String> stopwords = new ArrayList<String>(Files.readAllLines(Paths.get("stoplist.txt")));
+        frequencyAnalyzer.setStopWords(stopwords);
 
+        //load tweets to frequencyAnalyzer to calculate word frequencies
         final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load(tweets);
+
+        //set dimension and colors for word cloud
         final Dimension dimension = new Dimension(500, 500);
         final com.kennycason.kumo.WordCloud wordCloud = new com.kennycason.kumo.WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
         wordCloud.setPadding(5);
         wordCloud.setBackground(new CircleBackground(300));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0xFFFFFF)));
         wordCloud.setFontScalar(new SqrtFontScalar(10, 40));
+
+        //build word cloud using calculated word frequencies
         wordCloud.build(wordFrequencies);
+
+        //output word cloud as a png
         //wordCloud.writeToFile("C:\\Users\\Akmal\\Web_Crawler_Project\\src\\main\\webapp\\image\\wordcloud.png");
         wordCloud.writeToFile("C:\\Users\\Haikal Wahab\\Documents\\SIT\\Tri 2\\OOP\\WebCrawler\\src\\main\\webapp\\image\\wordcloud.png");
         System.out.println("Printed wordcloud successfully");

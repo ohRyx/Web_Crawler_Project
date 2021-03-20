@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tweets {
+    //Declare global variable twitter
     private Twitter twitter;
 
     //Establish twitter connection
@@ -24,6 +25,7 @@ public class Tweets {
 
     //Perform query based on keyword and number
     public List<Status> performQuery(String keyword, String num) throws InterruptedException, IOException {
+        //Filter out tweets with retweets, links, replies and images
         Query query = new Query(keyword + " -filter:retweets -filter:links -filter:replies -filter:images");
 
         //set language to English
@@ -32,10 +34,9 @@ public class Tweets {
         long lastID = Long.MAX_VALUE;
         //create arrayList to store tweets
         ArrayList<Status> tweets = new ArrayList<Status>();
-        int write_count = 1;
         int numberOfTweets = Integer.parseInt(num);
 
-        //get tweets
+        //get tweets, while loop used to retrieve 100 tweets at a time
         while (tweets.size() < numberOfTweets) {
             if (numberOfTweets - tweets.size() > 100)
                 query.setCount(100);
@@ -65,11 +66,11 @@ public class Tweets {
     public List<String> getLocationTrends(String location) throws TwitterException {
 
         Integer idTrendLocation = getTrendLocationId(location);
-
+        //declare trendsList to store trends
         ArrayList<String> trendsList = new ArrayList<String>();
 
         try {
-
+            //check for null/empty input
             if (idTrendLocation == null) {
                 System.out.println("Trend Location Not Found");
             }
@@ -79,7 +80,6 @@ public class Tweets {
 
             for (int i = 0; i < trends.getTrends().length; i++) {
                 trendsList.add(trends.getTrends()[i].getName());
-                //System.out.println(trends.getTrends()[i].getName());
             }
 
             //Catching error
@@ -94,15 +94,20 @@ public class Tweets {
 
     private Integer getTrendLocationId(String placeName) {
         int LocationID = 0;
+
+        //if location is empty/null then return 1 to set location as globat
         if (placeName == "") {
             LocationID = 1;
             return LocationID;
         }
         try {
+            //declare locations list to store location trends
             ResponseList<Location> locations;
             locations = twitter.getAvailableTrends();
 
+            //iterate through locations list
             for (Location location : locations) {
+                //check if location name equals to user input location
                 if (location.getName().equalsIgnoreCase(placeName.toLowerCase())) {
                     LocationID = location.getWoeid();
                     break;
