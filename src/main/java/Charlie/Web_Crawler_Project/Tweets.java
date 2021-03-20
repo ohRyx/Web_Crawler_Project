@@ -13,7 +13,7 @@ public class Tweets {
     private Twitter twitter;
 
     //Establish twitter connection
-    public void tweetManager(){
+    public void tweetManager() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("kCz7E2IGV5ye71Ct79bsvq09a")
@@ -25,9 +25,11 @@ public class Tweets {
     }
 
     //Perform query
-    public List<Status> performQuery(String keyword, int numberOfTweets) throws InterruptedException, IOException {
+    public List<Status> performQuery(String keyword, String num) throws InterruptedException, IOException {
         Query query = new Query(keyword + " -filter:retweets -filter:links -filter:replies -filter:images");
         System.out.println("TESTESTESTES");
+        int numberOfTweets = Integer.parseInt(num);
+
         //set language to English
         query.setLang("en");
 
@@ -95,7 +97,7 @@ public class Tweets {
 
     private Integer getTrendLocationId(String placeName) {
         int LocationID = 0;
-        if (placeName == ""){
+        if (placeName == "") {
             LocationID = 1;
             return LocationID;
         }

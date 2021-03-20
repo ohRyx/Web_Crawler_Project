@@ -92,7 +92,7 @@ public class RedditCrawl {
         }
     }
 
-    public static void crawlPost(String search, int num) throws RestClientException, ParseException {
+    public static void crawlPost(String search, String num) throws RestClientException, ParseException {
         String articlesTitle, articlesUrl, selfText;
         Long comments;
         Double upVotes;
