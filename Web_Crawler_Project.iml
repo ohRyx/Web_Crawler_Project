@@ -66,6 +66,7 @@
         </SOURCES>
         <jarDirectory url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" recursive="false" />
         <jarDirectory url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" recursive="false" type="SOURCES" />
+        <jarDirectory url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
   </component>

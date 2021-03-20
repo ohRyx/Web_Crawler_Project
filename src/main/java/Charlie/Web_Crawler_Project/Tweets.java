@@ -27,7 +27,6 @@ public class Tweets {
     //Perform query
     public List<Status> performQuery(String keyword, String num) throws InterruptedException, IOException {
         Query query = new Query(keyword + " -filter:retweets -filter:links -filter:replies -filter:images");
-        System.out.println("TESTESTESTES");
         int numberOfTweets = Integer.parseInt(num);
 
         //set language to English
@@ -124,5 +123,4 @@ public class Tweets {
             return null;
         }
     }
-
 }

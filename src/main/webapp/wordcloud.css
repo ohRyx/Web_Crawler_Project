@@ -14,13 +14,12 @@
 }
 
 /* Modal Content */
-/* #fefefe white */
 .modal-content {
     background-color: #000000;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 80%;
 }
 
 /* The Close Button */
@@ -38,7 +37,8 @@
     cursor: pointer;
 }
 
-.h1 {
-    color: navy;
-    margin-left: 50px;
-}
+/*h1 {*/
+/*    color: #aaaaaa;*/
+/*    margin-left: 50px;*/
+/*    font-size: 24px;*/
+/*}*/
