@@ -54,5 +54,19 @@
     <orderEntry type="library" exported="" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="javaee-api-6.0" level="project" />
     <orderEntry type="library" exported="" name="twitter4j-core-4.0.7" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" />
+          <root url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" />
+        </SOURCES>
+        <jarDirectory url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" recursive="false" />
+        <jarDirectory url="file://C:/Program Files/Development/stanford-corenlp-4.2.0" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>
