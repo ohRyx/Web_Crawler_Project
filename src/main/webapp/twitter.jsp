@@ -69,9 +69,11 @@
     </div>
 </div>
 
-${sen}
+<div class=" relative inset-x-96 inset-y-28 ml-60 bg-green-400 w-6/12 rounded-lg">
+    <p class="text-xl font-semibold rounded-lg px-2 text-center">${sen}</p>
+</div>
 
-<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-52 overflow-auto">
+<div class="container w-3/5 mx-auto absolute inset-x-64 inset-y-64 overflow-auto">
     <c:forEach items="${requestScope.twitterlist}" var="twitterlist" varStatus="theCount">
         <div class="border-2 px-2 py-2 rounded-md border-black hover:border-yellow-300">
             <p class="font-black">${theCount.count}) ${twitterlist.name}:</p>
