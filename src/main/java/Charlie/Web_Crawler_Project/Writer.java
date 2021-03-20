@@ -33,6 +33,18 @@ public class Writer {
         myWriter.close();
     }
 
+    public void writeStatus(List<Status> tweets, String fileToWrite) throws IOException {
+        int write_count = 1;
+        //open write
+        FileWriter myWriter = new FileWriter(fileToWrite);
+
+        //write to file
+        for (Status t : tweets)
+            myWriter.write(String.valueOf(t));
+        write_count++;
+        myWriter.close();
+    }
+
     //write to file function for normal string data
     public void storeStringTxt(List<String> data, String fileToWrite) throws IOException {
         int write_count = 1;

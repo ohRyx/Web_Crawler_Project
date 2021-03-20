@@ -21,16 +21,6 @@ public class WordCloud {
 
     }
 
-    public void test() {
-        final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
-        System.out.println("testingfml");
-        try {
-            final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load("tweets.txt");
-        } catch (IOException e) {
-            System.out.println(e.toString());
-        }
-    }
-
     public void createWordCloud(String tweets) throws IOException {
         //create word cloud
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();

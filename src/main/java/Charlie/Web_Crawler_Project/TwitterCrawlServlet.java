@@ -28,7 +28,7 @@ public class TwitterCrawlServlet extends HttpServlet {
 
         //create tweets list
         List<Status> tweetsList = new ArrayList<Status>();
-        List<twitterClass> twitterList = new ArrayList<>();
+        List<twitterClass>twitterList = new ArrayList<>();
 
 
         if (Utils.isEmpty(keyword, num)) {
@@ -66,15 +66,36 @@ public class TwitterCrawlServlet extends HttpServlet {
 
             //create a text file
             writeTweets.createTxt("tweets.txt");
+            writeTweets.createTxt("status.txt");
 
             //get tweets and write to txt file
             writeTweets.writeTxt(tweetsList, "tweets.txt");
 
-//        //init wordcloud object
-//        WordCloud wordCloud = new WordCloud();
-//
-//        //create word cloud using tweets.txt
-//        wordCloud.createWordCloud("tweets.txt");
+            //Initializing the sentiment analyzer
+            NLPSentiment.init();
+            //Console feedback
+            System.out.println("Performing Sentiment Analysis..\n");
+            int analysisCounter = 0;
+            int analysisTotal = 0;
+            //Starting analysis
+            for(Status t : tweetsList) {
+                NLPSentiment.getSentimentValue(t.getText());
+                //Console feedback
+                analysisCounter++;
+                analysisTotal++;
+                if(analysisCounter == 20)
+                {
+                    System.out.println("Tweets analyzed: " + analysisTotal);
+                    analysisCounter = 0;
+                }
+            }
+
+            List<String> sentiList = new ArrayList<>();
+            System.out.println("Sentiment Analysis Complete!\n\n");
+            //Final output after analysis is complete
+            System.out.println(NLPSentiment.getOverallSentiment());
+
+
         }
         request.setAttribute("twitterlist", twitterList);
         getServletContext().getRequestDispatcher("/wordcloud").include(request, response);
