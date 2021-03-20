@@ -1,7 +1,10 @@
 package Charlie.Web_Crawler_Project;
 
 /**
- * The type Twitter trend class.
+ * The type Twitter trend class. This class is used to store twitter trend details.
+ *
+ * @author Haikal
+ * @version 1.0
  */
 public class twitterTrendClass {
     //declare global variables to store twitter trend position and trend name

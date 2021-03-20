@@ -1,7 +1,6 @@
 package Charlie.Web_Crawler_Project;
 
 import twitter4j.Status;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -9,6 +8,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Twitter crawl servlet. This servlet is used to control twitter crawling.
+ *
+ * @author Akmal, Haikal
+ * @version 1.0
+ */
 @WebServlet(name = "TwitterCrawlServlet", value = "/tweet")
 public class TwitterCrawlServlet extends HttpServlet {
     @Override

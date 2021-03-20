@@ -14,6 +14,9 @@ import edu.stanford.nlp.util.CoreMap;
 
 /**
  * The type Nlp sentiment.
+ *
+ * @author Princeton
+ * @version 1.0
  */
 public class NLPSentiment {
     /**
@@ -55,7 +58,7 @@ public class NLPSentiment {
     }
 
     /**
-     * Gets sentiment value.
+     * Gets sentiment value for each tweet
      *
      * @param data the data
      * @return the sentiment value

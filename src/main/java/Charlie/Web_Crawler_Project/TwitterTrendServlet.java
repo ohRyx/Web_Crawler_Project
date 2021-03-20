@@ -1,8 +1,6 @@
 package Charlie.Web_Crawler_Project;
 
-import twitter4j.Status;
 import twitter4j.TwitterException;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -10,6 +8,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Twitter trend servlet. This servlet is used to control twitter trends.
+ *
+ * @author Haikal
+ * @version 1.0
+ */
 @WebServlet(name = "TwitterTrendServlet", value = "/trend")
 public class TwitterTrendServlet extends HttpServlet {
     @Override

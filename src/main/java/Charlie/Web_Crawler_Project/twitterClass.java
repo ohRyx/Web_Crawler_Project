@@ -2,7 +2,10 @@ package Charlie.Web_Crawler_Project;
 
 
 /**
- * The type Twitter class.
+ * The type Twitter class object. Is used to store tweet details
+ *
+ * @author Haikal
+ * @version 1.0
  */
 public class twitterClass {
     //declare global variables to store username, tweet text and retweet count of tweet
@@ -24,7 +27,7 @@ public class twitterClass {
      * @param tweet   the tweet
      * @param rtcount the rtcount
      */
-//class constructor
+
     public twitterClass(String name, String tweet, int rtcount) {
         this.name = name;
         this.tweet = tweet;
@@ -36,7 +39,6 @@ public class twitterClass {
      *
      * @return the name
      */
-//define get() set() functions for variables
     public String getName() {
         return name;
     }

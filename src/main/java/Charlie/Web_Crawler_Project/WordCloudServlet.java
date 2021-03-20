@@ -6,6 +6,12 @@ import javax.servlet.annotation.*;
 import javax.swing.*;
 import java.io.IOException;
 
+/**
+ * The type Word cloud servlet. This servlet is used to control word cloud.
+ *
+ * @author Akmal
+ * @version 1.0
+ */
 @WebServlet(name = "WordCloudServlet", value = "/wordcloud")
 public class WordCloudServlet extends HttpServlet {
     @Override

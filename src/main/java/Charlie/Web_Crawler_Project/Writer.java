@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Writer.
+ * The type Writer class. Used to call functions to write/output
+ *
+ * @author Akmal, Princeton
+ * @version 1.0
  */
 public class Writer {
     /**

@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Tweets.
+ * The type Tweets. Contains tweet functions in order for tweet retrieval
+ *
+ * @author Akmal, Princeton
+ * @version 1.0
  */
 public class Tweets {
     //Declare global variable twitter
