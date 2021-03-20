@@ -18,6 +18,7 @@ public class TwitterCrawlServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //initialise Tweets object and call tweetManager() to establish twitter connection
         Tweets tweets = new Tweets();
         tweets.tweetManager();
 
@@ -30,7 +31,6 @@ public class TwitterCrawlServlet extends HttpServlet {
         //create tweets list
         List<Status> tweetsList = new ArrayList<Status>();
         List<twitterClass> twitterList = new ArrayList<>();
-
 
         if (Utils.isEmpty(keyword, num)) {
             error = "Search is empty";
@@ -55,12 +55,12 @@ public class TwitterCrawlServlet extends HttpServlet {
             for (Status status : tweetsList) {
                 String name = "@" + status.getUser().getName();
                 String tweet = status.getText();
-                Integer retcount = status.getRetweetCount();
+                Integer rtcount = status.getRetweetCount();
 
                 //System.out.println(name);
                 System.out.println(tweet);
 
-                twitterList.add(new twitterClass(name, tweet, retcount));
+                twitterList.add(new twitterClass(name, tweet, rtcount));
             }
             //create WriteTweets object
             Writer writeTweets = new Writer();
@@ -73,10 +73,12 @@ public class TwitterCrawlServlet extends HttpServlet {
 
             //Initializing the sentiment analyzer
             NLPSentiment.init();
+
             //Console feedback
             System.out.println("Performing Sentiment Analysis..\n");
             int analysisCounter = 0;
             int analysisTotal = 0;
+
             //Starting analysis
             for (Status t : tweetsList) {
                 NLPSentiment.getSentimentValue(t.getText());
@@ -92,13 +94,15 @@ public class TwitterCrawlServlet extends HttpServlet {
             sen = NLPSentiment.getOverallSentiment();
             System.out.println("Sentiment Analysis Complete!\n\n");
             //Final output after analysis is complete
-            System.out.println(NLPSentiment.getOverallSentiment());
             System.out.println(sen);
 
 
         }
+        //set attribute to pass variables from servlet to GUI
         request.setAttribute("twitterlist", twitterList);
         request.setAttribute("sen", sen);
+
+        //redirect to WordCloudServlet.java
         getServletContext().getRequestDispatcher("/wordcloud").include(request, response);
     }
 }

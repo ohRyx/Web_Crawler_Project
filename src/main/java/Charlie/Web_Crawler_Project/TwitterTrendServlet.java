@@ -14,6 +14,7 @@ import java.util.List;
 public class TwitterTrendServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //initialise Tweets object and call tweetManager() to establish twitter connection
         Tweets tweets = new Tweets();
         tweets.tweetManager();
 
@@ -34,8 +35,9 @@ public class TwitterTrendServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        //set for loop to obtain only top 20 trends
         for (Integer trendposition = 1; trendposition < 21; trendposition++) {
-            //print trends postion and name
+            //print trends position and name
             System.out.println(trendposition + ": " + trends.get(trendposition - 1));
 
             //add trends to list
@@ -45,8 +47,8 @@ public class TwitterTrendServlet extends HttpServlet {
 
         //store trends in txt file
         writeTweets.storeStringTxt(trends, "trends.txt");
-        System.out.println("Twiiter Trends Crawl Works!");
-        System.out.println("TRY ");
+
+        //redirect to index.jsp page
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
 

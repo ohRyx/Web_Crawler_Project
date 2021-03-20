@@ -14,12 +14,13 @@ public class WordCloudServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //init wordcloud object
+        //init word cloud object
         WordCloud wordCloud = new WordCloud();
 
-        //create word cloud using tweets.txt
+        //call createWodCloud() to create word cloud using tweets.txt
         wordCloud.createWordCloud("tweets.txt");
 
+        //redirect to twitter.jsp page
         getServletContext().getRequestDispatcher("/twitter.jsp").forward(request, response);
 
     }
