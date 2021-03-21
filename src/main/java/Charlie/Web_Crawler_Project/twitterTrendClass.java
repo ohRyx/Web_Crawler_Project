@@ -1,7 +1,7 @@
 package Charlie.Web_Crawler_Project;
 
 /**
- * The type Twitter trend class. This class is used to store twitter trend details.
+ * The type Twitter trend class, This class is used to store twitter trend details.
  *
  * @author Haikal
  * @version 1.0

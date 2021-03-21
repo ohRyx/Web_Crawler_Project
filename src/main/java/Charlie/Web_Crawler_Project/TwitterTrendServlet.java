@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Twitter trend servlet. This servlet is used to control twitter trends.
+ * The type Twitter trend servlet, This servlet is used to control twitter trends.
  *
  * @author Haikal
  * @version 1.0

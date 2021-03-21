@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Tweets. Contains tweet functions in order for tweet retrieval
+ * The type Tweets, Contains tweet functions in order for tweet retrieval
  *
  * @author Akmal, Princeton
  * @version 1.0

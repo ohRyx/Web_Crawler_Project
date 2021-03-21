@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Reddit crawl post servlet. This servlet is use to control reddit crawl post
+ * The type Reddit crawl post servlet, This servlet is use to control reddit crawl post
  *
  * @author gwwc0
  * @version 1.0

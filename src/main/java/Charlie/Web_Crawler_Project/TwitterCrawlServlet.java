@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Twitter crawl servlet. This servlet is used to control twitter crawling.
+ * The type Twitter crawl servlet, This servlet is used to control twitter crawling.
  *
  * @author Akmal, Haikal
  * @version 1.0

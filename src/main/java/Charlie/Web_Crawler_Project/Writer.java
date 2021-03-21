@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Writer class. Used to call functions to write/output
+ * The type Writer class, Used to call functions to write/output
  *
  * @author Akmal, Princeton
  * @version 1.0
@@ -55,7 +55,7 @@ public class Writer {
         //write texts from tweets to file
         for (Status t : tweets)
             myWriter.write(write_count + t.getText());
-            write_count++;
+        write_count++;
 
         //close writer
         myWriter.close();

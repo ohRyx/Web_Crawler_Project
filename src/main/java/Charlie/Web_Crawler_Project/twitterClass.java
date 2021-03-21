@@ -2,7 +2,7 @@ package Charlie.Web_Crawler_Project;
 
 
 /**
- * The type Twitter class object. Is used to store tweet details
+ * The type Twitter class object, Is used to store tweet details
  *
  * @author Haikal
  * @version 1.0

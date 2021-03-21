@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.io.IOException;
 
 /**
- * The type Word cloud servlet. This servlet is used to control word cloud.
+ * The type Word cloud servlet, This servlet is used to control word cloud.
  *
  * @author Akmal
  * @version 1.0

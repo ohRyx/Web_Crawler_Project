@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Reddit popular servlet. This servlet is is to control the reddit popular post
+ * The type Reddit popular servlet, This servlet is is to control the reddit popular post
  *
  * @author Haikal
  * @version 1.0

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * The type Reddit crawl. This is where various function related to Reddit will be use.
+ * The type Reddit crawl, This is where various function related to Reddit will be use.
  *
  * @author gwwc0
  * @version 1.0

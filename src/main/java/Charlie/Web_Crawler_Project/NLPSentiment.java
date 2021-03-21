@@ -13,7 +13,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
 
 /**
- * The type Nlp sentiment.
+ * The type Nlp sentiment, this is where the Sentiment Analysis is generated
  *
  * @author Princeton
  * @version 1.0

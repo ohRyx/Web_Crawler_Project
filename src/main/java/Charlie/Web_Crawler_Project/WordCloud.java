@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The type Word cloud. This class is used to call word cloud functions
+ * The type Word cloud, This class is used to call word cloud functions
  *
  * @author Akmal
  * @version 1.0
