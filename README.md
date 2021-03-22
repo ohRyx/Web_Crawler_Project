@@ -6,7 +6,9 @@ This project is done by Akmal, Princeton, Germaine & Haikal
 
 All the JAR libaray needed to run this program is already included in this repo.
 This program is develop using IntellJ IDEA.
+
 JDK: 15
+
 Tomcat Server: 9.0.44
 
 The only JAR libary that is not included is the CoreNLP 4.2.0 as the file is too large to upload to Git.
