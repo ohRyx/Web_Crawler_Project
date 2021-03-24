@@ -1,6 +1,6 @@
 # Web_Crawler_Project
 This repo is a project for the CSC1009 - Object Oriented Programming. 
-The project is about developing a web crawler that will crawl data from Twiiter and Reddit.
+The project is about developing a web crawler that will crawl data from Twitter and Reddit.
 
 This project is done by Akmal, Princeton, Germaine & Haikal
 
